@@ -14,19 +14,27 @@ include "common/menu.php";
 <?php 
     if(isset($_POST['hauteur']) && $_POST['hauteur'] >0){
         $hauteur = $_POST['hauteur'];
-        echo "Pyramide de hauteur : ".$hauteur ;
-        $txt = "";
-        for($i = 0 ; $i < $hauteur ; $i++){
-            $txt .= "xx";
-            echo $txt."<br>";
+        if(empty($hauteur)){
+            echo  "<h1>veuillez remplir le champ ci-dessous s'il vous plaît.</h1>";
+         }else{ echo "<h3>Pyramide de Hauteur: $hauteur</h3><br>";
+            for($i=1; $i<=$hauteur; $i++){
+                for($j=1; $j<=$i; $j++){
+                    echo "**";
+                }
+                echo "<br>";
+            }
+            for($i=1; $i<=$hauteur; $i++){
+                for($j=$hauteur - $i; $j>=1; $j--){
+                    echo "**";
+                }
+                echo "<br>";
+            }
         }
-        for($i = 0 ; $i < $hauteur-1 ; $i++){
-            $txt = substr($txt,0,strlen($txt)-2);
-            echo $txt."<br>";
-        }
-    } else {
-        echo "Saisir une valeur dans le champ ci-dessus";
+    }else{
+        echo "<h1>Saisir une valeur dans le champ ci-dessus</h1>";
     }
+
+
 ?>
 </div>
 <?php
