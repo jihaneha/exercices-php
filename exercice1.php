@@ -20,7 +20,7 @@ include "common/menu.php";
                 echo "la table de $number";
                 for ($i = 1; $i <= 10; $i++) {
                     $result = $i * $number;
-                    echo "$i * $number = $result";
+                    echo "<div>$i * $number = $result </div>";
                 }
             }
         } else {
