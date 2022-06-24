@@ -4,7 +4,7 @@ include "common/menu.php";
 ?>
 
 <div class="div">
-<h1 class="h1">Cercle - Périmètre et Aire</h1>
+<h1 class="h1" id="h1">Cercle - Périmètre et Aire</h1>
 <form action="exercice3.php" method="POST">
     <label class="label" for="rayon">rayon : </label>
     <input type="number" name="rayon" id="rayon" class="inp"><br>
