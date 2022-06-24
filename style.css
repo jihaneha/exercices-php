@@ -48,11 +48,14 @@ li{
     font-size: 28px;
 }
 .inp1{
-    font-size: 28px;
+    font-size: 20px;
     border:none;
     margin : 20px;
-    background-color: yellow;
+    background-color: rgb(255, 166, 0);
     cursor:pointer;
+    padding:20px;
+    border-radius: 10px;
+    
 }
 .btn{
     padding:20px;
