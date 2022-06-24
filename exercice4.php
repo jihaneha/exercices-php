@@ -1,4 +1,5 @@
 <?php
+session_start();
 include "common/head.php";
 include "common/menu.php";
 ?>
@@ -15,15 +16,33 @@ include "common/menu.php";
             <input type="submit" value="Valider" name="submit" class="btn">
         </form>
 <?php 
-   if(isset($_POST['rayon']) && $_POST['rayon'] >0){
+ 
+ if (isset($_POST['reset'])) {
+     if (isset($_SESSION['guess'])) {
+         unset($_SESSION['guess']);
+     }
+ }
+ if (isset($_POST['submit'])) {
 
-
-
-
-}else{
-    echo "<h2>Saisir une valeur dans le champ ci-dessus</h2>";
-}
-    
+     $num = $_POST['chiffre'];
+     if (empty($num) || $num <= 0) {
+         echo "<p>Saisir une valeur dans le champ ci-dessus</p>";
+     } else {
+         // Get the computer guess
+         $_SESSION['guess'] = rand(1, 100000);
+         $guess =  $_SESSION['guess'];
+         if ($num > $guess) {
+             echo "<p>Le chiffre est plus grand</p>";
+         } else if ($num < $guess) {
+             echo "<p>Le chiffre est plus petit</p>";
+         } else if ($num == $guess) {
+             echo "<p>Le chiffre est true</p>";
+         }
+     }
+ } else {
+     echo "<p>Saisir une valeur dans le champ ci-dessus</p>";
+ }
+  
 
 ?>
 </div>
