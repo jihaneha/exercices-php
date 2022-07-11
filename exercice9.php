@@ -13,7 +13,7 @@ include "common/menu.php";
         </form>
         <?PHP
             if (isset($_POST['submit'])) {
-            $number = $_POST['num'];
+            $number = $_POST['num']; 
             if (empty($number)) {
                 echo " Saisir une valeur dans le champ ci-dessus";
             } else {
