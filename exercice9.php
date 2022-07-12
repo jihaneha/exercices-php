@@ -18,10 +18,10 @@ include "common/menu.php";
                 echo " Saisir une valeur dans le champ ci-dessus";
             } else {
                 echo "Facture de la commande de :  $number";  
-            }
             } else {
             echo "Saisir une valeur dans le champ ci-dessus";
             }
+           
         ?>
 
 
