@@ -11,6 +11,7 @@ include "common/menu.php";
             <input type="submit" value="Valider" name="submit" class="btn">
         </form>
 <?php 
+
 if(isset($_POST['notes']) && $_POST['notes'] >0){
     $notes = $_POST['notes'];
     $moyenne=null;
